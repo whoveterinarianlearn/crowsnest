@@ -10,7 +10,6 @@ on:
 
 jobs:
   release:
-    needs: [ 'update-master-branch' ]
     runs-on: ubuntu-latest
     permissions:
       contents: write
