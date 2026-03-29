@@ -9,16 +9,6 @@ on:
         required: true
 
 jobs:
-  update-master-branch:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: everlytic/branch-merge@1.1.5
-        with:
-          github_token: ${{ secrets.PAT }}
-          source_ref: 'develop'
-          target_branch: 'master'
-          commit_message_template: '[Automated] Merged {source_ref} into target {target_branch}'
-
   release:
     needs: [ 'update-master-branch' ]
     runs-on: ubuntu-latest
